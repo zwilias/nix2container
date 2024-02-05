@@ -13,9 +13,7 @@ import (
 
 func getPaths(storePaths []string, parents []types.Layer, rewrites []types.RewritePath, exclude string, permPaths []types.PermPath) types.Paths {
 	var paths types.Paths
-	logrus.Info("Start gathering paths")
 	for _, p := range storePaths {
-		logrus.Infof("Processing path %s", p)
 		path := types.Path{
 			Path: p,
 		}
@@ -59,9 +57,7 @@ func getPaths(storePaths []string, parents []types.Layer, rewrites []types.Rewri
 			continue
 		}
 		paths = append(paths, path)
-		logrus.Infof("Done with path %s", p)
 	}
-	logrus.Info("Done gathering paths")
 	return paths
 }
 
